@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/styl.css" />
+    <link rel="stylesheet" type="text/css" href="css/styleForm.css" />
+    <link rel="stylesheet" href="css/stylPrint.css" media="print" />
+    <title>Ãvod</title>
+  </head>
+
+  <body id="celastranka">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="mainpage.html">Ãvod</a></li>
+          <li><a href="aboutMe.html">O mne</a></li>
+          <li><a href="articles.html">ÄlÃ¡nky</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article class="contentbox" id="uvod">
+      <h2>Welcome to the</h2>
+      <p>
+        Tak ako so vÅ¡etkÃ½m v Å¾ivote, niekedy idÃº veci Ä¾ahÅ¡ie a niekedy
+        menej. A niekedy nejdÃº vÃ´bec. NiÄ sa nÃ¡m nechce, sme demotivovanÃ­ a
+        bez energie. To platÃ­ aj pri cviÄenÃ­ a trÃ©ningu. Äi uÅ¾ je to naÅ¡a
+        lenivosÅ¥, vyÄerpanie, stres alebo Ãºnava. A moÅ¾no viem, Äo s tÃ½m...
+      </p>
+    </article>
+    <article class="contentbox">
+      <h2>FITNESS</h2>
+      <p>
+        SpÃ´sobov, ako sa znova nakopnÃºÅ¥ k akcii, k Å¾ivotu a dodaÅ¥ si
+        vnÃºtornÃº energiu, je vÅ¾dy niekoÄ¾ko. Ak je to prÃ¡ve trÃ©ning a
+        cviÄenie, ku ktorÃ©mu sa nevieÅ¡ âdokopaÅ¥â, mÃ¡m pre teba niekoÄ¾ko
+        tipov, ktorÃ© Å¥a zdvihnÃº zo sedaÄky.
+      </p>
+    </article>
+
+    <button onclick="window.location.href = 'article1.html';">
+      Rozdelenie partiÃ­
+    </button>
+    <button onclick="window.location.href = 'article2.html';">
+      TrÃ©ning rÃºk
+    </button>
+    <button onclick="window.location.href = 'article3.html';">
+      TrÃ©ning nÃ´h
+    </button>
+    <button onclick="window.location.href = 'article4.html';">
+      TrÃ©ning hrudnÃ­ka a ramien
+    </button>
+    <button onclick="window.location.href = 'article5.html';">
+      TrÃ©ning chrbta
+    </button>
+
+    <article class="contentbox">
+      <!--id="artOpinions"-->
+      <h2>Visitor Opinions</h2>
+      <div id="opinionsContainer"></div>
+      <button onclick="resetForm()">Reset</button>
+    </article>
+
+    <article id="opinion">
+      <h2>VÃ¡Å¡ nÃ¡zor nÃ¡m nie je Ä¾ahostajnÃ½</h2>
+      <p>
+        ProsÃ­m, zanechajte nam VÃ¡Å¡ nÃ¡zor.
+      </p>
+
+      <form id="opnFrm">
+        <label for="nameElm">Meno:</label>
+
+        <input
+          type="text"
+          name="login"
+          id="nameElm"
+          size="20"
+          maxlength="50"
+          placeholder="VaÅ¡e meno"
+          required
+        />
+
+        <br /><br />
+        <label for="mail">E-mail:</label>
+
+        <input
+          type="email"
+          name="mail"
+          id="mail"
+          size="30"
+          placeholder="VÃ¡Å¡ email"
+          required
+        />
+
+        <br /><br />
+        <label for="url">URL:</label>
+
+        <input type="url" name="url" id="url" size="50" placeholder="Odkaz" />
+        <br /><br />
+        <label for="male">MuÅ¾</label>
+        <input type="radio" name="male" id="male" value="male" /><br />
+
+        <label for="female">Å½ena</label>
+        <input type="radio" name="female" id="female" value="female" /><br />
+
+        <br /><br />
+
+        <!--  <label for="check">Chcem dostÃ¡vaÅ¥ emaily s novinkami</label>
+
+        <input type="checkbox" id="check" name="subscribe" value="checked"/>-->
+
+        <label for="check">Chcem dostÃ¡vaÅ¥ emaily s novinkami.</label>
+        <input type="checkbox" id="check" name="check" />
+
+        <br /><br />
+        <label for="opnElm">NÃ¡zor</label><br />
+
+        <textarea
+          name="comment"
+          id="opnElm"
+          cols="50"
+          rows="3"
+          placeholder="Tu opÃ­Å¡te svoje problÃ©my, sÅ¥aÅ¾nosti, nÃ¡vrhy ..."
+          required
+        ></textarea>
+        <br /><br />
+
+        <button type="submit">Send</button>
+        <button type="reset" onclick="reset()">Reset</button>
+      </form>
+
+      <!-- <footer  class="menuLink"><a class="link" href="#uvod">Back to the menu</a></footer>-->
+    </article>
+
+    <aside>
+      <p>
+        &quot;ByÅ¥ fit nie je cieÄ¾ovou destinÃ¡ciou, je to spÃ´sob Å¾ivota.
+      </p>
+    </aside>
+    <footer class="menuLink">
+      <a class="link" href="#celastranka">Back to the menu</a>
+      <a class="link" href="mainpageALT.html">Alternative page</a>
+    </footer>
+
+    <script id="mTmplOneOpinion" type="text/template">
+      <section>
+          <h3>{{name}} <i>{{createdDate}}</i></h3>
+          <p>{{comment}}</p>
+          <p>{{url}}</p>
+          <p>{{gender}}</p>
+
+          <p>{{notifications}}</p>
+      </section>
+    </script>
+
+    <!---<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"
+        integrity="sha256-MPgtcamIpCPKRRm1ppJHkvtNBAuE71xcOM+MmQytXi8="
+        crossorigin="anonymous">
+</script> -->
+
+    <script src="js/formular.js"></script>
+  </body>
+</html>

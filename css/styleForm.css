@@ -1,0 +1,10 @@
+:required {
+    border: 2px solid black;
+}
+input:invalid, textarea:invalid{
+    border-color: red;
+    /*color: red;*/
+}
+:out-of-range{
+    color: red;
+}

@@ -1,0 +1,32 @@
+html{
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+}
+nav, button{
+    display: none;
+}
+#celastranka{
+    background-color: white;
+}
+.contentbox{
+    background-color: white;
+}
+
+body > header > h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+h2{
+    font-size: 1.3rem;
+}
+
+section > article > h2{
+    font-size: 1.6rem;
+}
+
+body > aside, .celastranka, body > nav{
+    display: none;
+}
+

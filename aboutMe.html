@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styl.css">
+    <link rel="stylesheet"
+          href="css/stylPrint.css"
+          media="print" />
+    <title>Kontakt</title>
+</head>
+
+<body id="celastranka">
+<header>
+    <nav>
+        <ul>
+            <li><a href = "mainpage.html">Ãvod</a></li>
+            <li><a href = "aboutMe.html">O mne</a></li>
+            <li><a href = "articles.html">ÄlÃ¡nky</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<article>
+    <img class="me" src="pictures/me.png" alt="me">
+
+    <table class="me">
+        <caption><h4>Kontakt</h4></caption>
+        <tr>
+            <td>Meno: </td><td>LukÃ¡Å¡</td>
+        </tr>
+        <tr>
+            <td>Priezvisko: </td><td>Kubaliak</td>
+        </tr>
+        <tr>
+        <td>Mail: </td><td><a href="mailto:lukas.kubaliak@student.tuke.sk?subject=Reakcia%20na%20VÃ¡Å¡%20blog%20s%20nÃ¡zvom%20'FITNESS'">
+            NapÃ­Å¡ mi!</a></td>
+        </tr>
+    </table>
+    <canvas id="myCanvas" width="200" height="100">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+
+    <a class="socialNetwork" href="https://www.instagram.com/bakuliaklukas/">
+        <img class="socialNetworkImage" alt="instagram" src="pictures/instagram.jpg" width="100" height="100">
+        <span class="tooltiptext">My Instagram</span>
+    </a>
+    <a class="socialNetwork" href="https://www.facebook.com/lukasbakuliak">
+        <img class="socialNetworkImage" alt="facebook" src="pictures/facebook.png" width="95" height="95">
+        <span class="tooltiptext">My Facebook</span>
+    </a>
+    <a class="socialNetwork2" onclick="snowManAlertInsta()" >
+        <img class="socialNetworkImage" alt="instagram" src="pictures/instagram.jpg" width="100" height="100">
+    </a>
+    <a class="socialNetwork" onclick="snowManAlertFace()">
+        <img class="socialNetworkImage" alt="facebook" src="pictures/facebook.png" width="95" height="95">
+    </a>
+</article>
+
+<script>
+    function snowManAlertInsta() {
+        alert("Tento snehuliak nemÃ¡ Instagram!");
+    }
+</script>
+
+<script>
+    function snowManAlertFace() {
+        alert("Tento snehuliak nemÃ¡ Facebook!");
+    }
+</script>
+
+<script>
+
+    // get the canvas
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    // set dimensions
+    /*var width = 300;
+    var height = 450;*/
+    var width = 235;//32.5
+    var height = 313;//68.5
+
+    canvas.width = width;
+    canvas.height = height;
+
+    function drawCircle(color, x, y, radius) {
+
+        ctx.strokeStyle = ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2,true);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+    }
+
+    function drawTriangle(color, x, y, height) {
+        ctx.strokeStyle = ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x - height, y - height);
+        ctx.lineTo(x + height, y - height);
+        ctx.fill();
+    }
+
+    function drawRectangle(color, x, y, width, height) {
+        ctx.strokeStyle = ctx.fillStyle = color;
+        ctx.fillRect(x, y, width, height);
+    }
+
+    // draw body
+    drawCircle("#fff", 117.5, 350, 100);
+    drawCircle("#fff", 117.5, 200, 75);
+    drawCircle("#fff", 117.5, 100, 50);
+
+    // draw eyes
+    drawCircle("#000", 138, 90, 5);
+    drawCircle("#000", 93, 90, 5);
+
+    // draw buttons
+    drawCircle("#000", 117.5, 160, 3);
+    drawCircle("#000", 117.5, 200, 3);
+    drawCircle("#000", 117.5, 240, 3);
+
+    // nose
+    drawTriangle("#000", 117.5, 110, 7);
+
+    // hat
+    drawRectangle("#555454", 77.5, 45, 80, 10);
+    drawRectangle("#555454", 87.5, 5, 60, 40);
+
+    // arms
+    drawRectangle("#44261c", 187.5, 200, 80, 5);
+    drawRectangle("#44261c", -32.5, 200, 80, 5);
+
+</script>
+
+</body>
+
+
+</html>
